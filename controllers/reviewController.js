@@ -27,5 +27,23 @@ module.exports = {
     )
       .then(review => res.status(200).send(review))
       .catch(error => res.status(400).send(error));
+  },
+
+  get(req, res) {
+    return Review.findOne(
+      {
+        where: {
+          id: req.param("review_id")
+        }
+      },
+      {
+        rating: req.body.rating,
+        review: req.body.review,
+        userId: req.body.userId,
+        restaurantId: req.body.restaurantId
+      }
+    )
+      .then(review => res.status(200).send(review))
+      .catch(error => res.status(400).send(error));
   }
 };
