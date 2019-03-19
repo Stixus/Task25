@@ -9,5 +9,6 @@ module.exports = app => {
   );
 
   app.post("/user/create", userController.create);
+  app.post("/user/update", userController.update);
   app.post("/restaurant/create", restaurantController.create);
 };
