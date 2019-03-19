@@ -32,15 +32,13 @@ module.exports = {
   get(req, res) {
     return Review.findOne(
       {
-        where: {
-          id: req.param("review_id")
-        }
-      },
-      {
         rating: req.body.rating,
         review: req.body.review,
         userId: req.body.userId,
         restaurantId: req.body.restaurantId
+      },
+      {
+        order: '"updatedAt" DESC'
       }
     )
       .then(review => res.status(200).send(review))

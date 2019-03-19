@@ -16,5 +16,5 @@ module.exports = app => {
   app.post("/restaurant/update", restaurantController.update);
   app.post("/review/create", reviewController.create);
   app.post("/review/update", reviewController.update);
-  app.get("/review/:review_id", reviewController.get);
+  app.get("/review/latest", reviewController.get);
 };
