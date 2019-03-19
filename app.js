@@ -27,6 +27,4 @@ app.get("*", (req, res) =>
   })
 );
 
-module.exports = app;
-
 app.listen(process.env.PORT || 8080);
