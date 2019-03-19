@@ -9,6 +9,7 @@ module.exports = app => {
     })
   );
 
+  app.get("/user/:user_id", userController.get);
   app.post("/user/create", userController.create);
   app.post("/user/update", userController.update);
   app.get("/restaurant/:restaurant_id", restaurantController.get);
