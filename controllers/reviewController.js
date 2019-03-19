@@ -30,17 +30,14 @@ module.exports = {
   },
 
   get(req, res) {
-    return Review.findOne(
-      {
-        rating: req.body.rating,
-        review: req.body.review,
-        userId: req.body.userId,
-        restaurantId: req.body.restaurantId
-      },
-      {
-        order: '"updatedAt" DESC'
-      }
-    )
+    return Review.findOne({
+      rating: req.body.rating,
+      review: req.body.review,
+      userId: req.body.userId,
+      restaurantId: req.body.restaurantId,
+
+      order: [["updatedAt", "DESC"]]
+    })
       .then(review => res.status(200).send(review))
       .catch(error => res.status(400).send(error));
   }
