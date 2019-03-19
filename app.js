@@ -1,4 +1,5 @@
 const express = require("express");
+const companyController = require("../controllers").restaurant;
 var app = express();
 
 var path = require("path");
@@ -19,9 +20,9 @@ app.get("/restaurant/:restaurant_id", (req, res) => {
   res.json(data);
 });
 
-app.get("/restaurant/create", (req, res) => {
-  res.json(data);
-});
+module.exports = app => {
+  app.post("/restaurant/create", companyController.create);
+};
 
 app.put("/restaurant/update", (req, res) => {
   res.json(data);
