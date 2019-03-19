@@ -10,6 +10,7 @@ module.exports = app => {
 
   app.post("/user/create", userController.create);
   app.post("/user/update", userController.update);
+  app.get("/restaurant/:restaurant_id", restaurantController.get);
   app.post("/restaurant/create", restaurantController.create);
   app.post("/restaurant/update", restaurantController.update);
 };

@@ -1,5 +1,13 @@
 const Restaurant = require("../models").Restaurant;
 module.exports = {
+  get(req, res) {
+    return Restaurant.findOne({
+      where: {
+        id: req.body.restaurant_id
+      }
+    });
+  },
+
   create(req, res) {
     return Restaurant.create({
       name: req.body.name,
