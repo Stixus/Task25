@@ -3,7 +3,7 @@ module.exports = {
   create(req, res) {
     return Review.create({
       rating: req.body.rating,
-      review: req.body.review,
+      review: req.body.reviewText,
       userId: req.body.userId,
       restaurantId: req.body.restaurantId
     })
