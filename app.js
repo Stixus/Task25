@@ -11,7 +11,7 @@ app.post("/user/create", (req, res) => {
   res.json(data);
 });
 
-app.post("/user/update", (req, res) => {
+app.put("/user/update", (req, res) => {
   res.json(data);
 });
 
@@ -23,7 +23,7 @@ app.get("/restaurant/create", (req, res) => {
   res.json(data);
 });
 
-app.post("/restaurant/update", (req, res) => {
+app.put("/restaurant/update", (req, res) => {
   res.json(data);
 });
 
@@ -39,7 +39,7 @@ app.get("/review/latest", (req, res) => {
   res.json(data);
 });
 
-app.post("/review/update", (req, res) => {
+app.put("/review/update", (req, res) => {
   res.json(data);
 });
 
