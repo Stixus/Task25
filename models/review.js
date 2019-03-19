@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: "userId",
       onDelete: "CASCADE"
     });
-    Restaurant.belongsTo(models.Restaurant, {
+    Review.belongsTo(models.Restaurant, {
       foreignKey: "restaurantId",
       onDelete: "CASCADE"
     });
