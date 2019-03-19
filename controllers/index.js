@@ -1,9 +1,6 @@
-const userController = require("./userController");
-module.exports = {
-  userController
-};
-
+const user = require("./userController");
 const restaurant = require("./restaurantController");
 module.exports = {
-  restaurant
+  restaurant,
+  user
 };
