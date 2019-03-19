@@ -1,4 +1,5 @@
 const userController = require("../controllers").userController;
+const restaurantController = require("../controllers").restaurant;
 
 module.exports = app => {
   app.get("/api", (req, res) =>
@@ -8,4 +9,5 @@ module.exports = app => {
   );
 
   app.post("/user/create", userController.create);
+  app.post("/restaurant/create", restaurantController.create);
 };
