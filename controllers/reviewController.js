@@ -3,9 +3,9 @@ module.exports = {
   create(req, res) {
     return Review.create({
       rating: req.body.rating,
-      review: req.body.review,
-      userId: req.body.userId,
-      restaurantId: req.body.restaurantId
+      review: req.body.reviewText,
+      userId: req.body.user_id,
+      restaurantId: req.body.restaurant_id
     })
       .then(review => res.status(201).send(review))
       .catch(error => res.status(400).send(error));
