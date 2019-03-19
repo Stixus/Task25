@@ -4,8 +4,8 @@ module.exports = {
     return Review.create({
       rating: req.body.rating,
       review: req.body.reviewText,
-      userId: req.body.userId,
-      restaurantId: req.body.restaurantId
+      userId: req.body.user_id,
+      restaurantId: req.body.restaurant_id
     })
       .then(review => res.status(201).send(review))
       .catch(error => res.status(400).send(error));
