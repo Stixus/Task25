@@ -18,4 +18,11 @@ module.exports = app => {
   app.post("/review/create", reviewController.create);
   app.post("/review/update", reviewController.update);
   app.get("/review/latest", reviewController.get);
+  /*
+    Need to have functioning foreign keys for this
+  */
+  app.get(
+    "/review/restaurant/:restaurant_id",
+    reviewController.getReviewByRestaurantId
+  );
 };
