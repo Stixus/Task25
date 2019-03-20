@@ -16,8 +16,8 @@ module.exports = {
       {
         rating: req.body.rating,
         review: req.body.review,
-        userId: req.body.userId,
-        restaurantId: req.body.restaurantId
+        userId: req.body.user_id,
+        restaurantId: req.body.restaurant_id
       },
       {
         where: {
@@ -33,8 +33,8 @@ module.exports = {
     return Review.findOne({
       rating: req.body.rating,
       review: req.body.review,
-      userId: req.body.userId,
-      restaurantId: req.body.restaurantId,
+      userId: req.body.user_id,
+      restaurantId: req.body.restaurant_id,
 
       order: [["updatedAt", "DESC"]]
     })
@@ -52,8 +52,8 @@ module.exports = {
       {
         rating: req.body.rating,
         review: req.body.review,
-        userId: req.body.userId,
-        restaurantId: req.body.restaurantId
+        userId: req.body.user_id,
+        restaurantId: req.body.restaurant_id
       }
     )
       .then(review => res.status(200).send(review))
