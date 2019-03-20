@@ -1,23 +1,26 @@
 {
   "development": {
-    "username": "root",
-    "password": "root",
-    "database": "task25",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "hlllndhglnsktc",
+    "password": "4dc12df1587fb6e48b9f318cd593240c715d3f52318b445094c213005a153737",
+    "database": "ec2-46-137-113-157.eu-west-1.compute.amazonaws.com",
+    "host": "ec2-46-137-113-157.eu-west-1.compute.amazonaws.com",
+    "port": "5432",
+    "dialect": "postgres"
   },
   "test": {
     "username": "root",
     "password": "root",
-    "database": "task25",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "database": "experis",
+    "host": "1s",
+    "port": "5432",
+    "dialect": "postgres"
   },
   "production": {
     "username": "root",
     "password": "root",
-    "database": "task25",
+    "database": "experis",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "port": "5432",
+    "dialect": "postgres"
   }
 }
