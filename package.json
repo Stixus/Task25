@@ -4,8 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently \"npm:migrate-server\" \"npm:start-server\"",
+    "test": "concurrently \"npm:migrate-server\" \"npm:start-server\"",
+    "start-server": "nodemon app.js",
+    "migrate-server": "sequelize db:migrate"
   },
   "author": "",
   "license": "ISC",
@@ -15,7 +17,11 @@
     "morgan": "^1.9.1",
     "mysql2": "^1.6.5",
     "nodemon": "^1.18.10",
-    "sequelize": "^5.1.0",
-    "sequelize-auto-migrations": "^1.0.3"
+    "pg": "^7.9.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^5.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0"
   }
 }
