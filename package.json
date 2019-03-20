@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "concurrently \"npm:migrate-server\" \"npm:start-server\"",
+    "start": "nodemon app.js",
+    "heroku-prebuild": "sequelize db:migrate",
     "test": "concurrently \"npm:migrate-server\" \"npm:start-server\"",
     "start-server": "nodemon app.js",
     "migrate-server": "sequelize db:migrate"
