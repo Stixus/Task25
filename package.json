@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
-    "heroku-postbuild": "sequelize db:migrate",
+    "heroku-posd": "sequelize db:migrate",
     "test": "concurrently \"npm:migrate-server\" \"npm:start-server\"",
     "start-server": "nodemon app.js",
     "migrate-server": "sequelize db:migrate"
