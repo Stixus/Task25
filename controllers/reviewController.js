@@ -1,5 +1,16 @@
 const Review = require("../models").Review;
 module.exports = {
+  getList(req, res) {
+    return Review.findAll({
+      rating: req.body.rating,
+      review: req.body.review,
+      userId: req.body.user_id,
+      restaurantId: req.body.restaurant_id
+    })
+      .then(review => res.status(200).send(review))
+      .catch(error => res.status(400).send(error));
+  },
+
   create(req, res) {
     return Review.create({
       rating: req.body.rating,
