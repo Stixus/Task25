@@ -1,30 +1,17 @@
 const Restaurant = require("../models").Restaurant;
 module.exports = {
   getList(req, res) {
-    return Restaurant.findAll({
-      name: req.body.name,
-      address: req.body.address,
-      description: req.body.description,
-      category: req.body.category
-    })
+    return Restaurant.findAll({})
       .then(restaurant => res.status(200).send(restaurant))
       .catch(error => res.status(400).send(error));
   },
 
   get(req, res) {
-    return Restaurant.findOne(
-      {
-        where: {
-          id: req.param("restaurant_id")
-        }
-      },
-      {
-        name: req.body.name,
-        address: req.body.address,
-        description: req.body.description,
-        category: req.body.category
+    return Restaurant.findOne({
+      where: {
+        id: req.param("restaurant_id")
       }
-    )
+    })
       .then(restaurant => res.status(200).send(restaurant))
       .catch(error => res.status(400).send(error));
   },
@@ -34,7 +21,8 @@ module.exports = {
       name: req.body.name,
       address: req.body.address,
       description: req.body.description,
-      category: req.body.category
+      category: req.body.category,
+      userId: req.body.user_id
     })
       .then(restaurant => res.status(201).send(restaurant))
       .catch(error => res.status(400).send(error));
@@ -46,7 +34,8 @@ module.exports = {
         name: req.body.name,
         address: req.body.address,
         description: req.body.description,
-        category: req.body.category
+        category: req.body.category,
+        userId: req.body.user_id
       },
       {
         where: {

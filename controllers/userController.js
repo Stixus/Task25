@@ -1,30 +1,17 @@
 const User = require("../models").User;
 module.exports = {
   getList(req, res) {
-    return User.findAll({
-      username: req.body.username,
-      password: req.body.password,
-      email: req.body.email,
-      role: req.body.role
-    })
+    return User.findAll({})
       .then(user => res.status(200).send(user))
       .catch(error => res.status(400).send(error));
   },
 
   get(req, res) {
-    return User.findOne(
-      {
-        where: {
-          id: req.param("user_id")
-        }
-      },
-      {
-        username: req.body.username,
-        password: req.body.password,
-        email: req.body.email,
-        role: req.body.role
+    return User.findOne({
+      where: {
+        id: req.param("user_id")
       }
-    )
+    })
       .then(user => res.status(200).send(user))
       .catch(error => res.status(400).send(error));
   },
