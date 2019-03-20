@@ -18,7 +18,7 @@
   "production": {
     "username": "hlllndhglnsktc",
     "password": "4dc12df1587fb6e48b9f318cd593240c715d3f52318b445094c213005a153737",
-    "database": "ec2-46-137-113-157.eu-west-1.compute.amazonaws.com",
+    "database": "de6oo09q1veuu9",
     "host": "ec2-46-137-113-157.eu-west-1.compute.amazonaws.com",
     "port": "5432",
     "dialect": "postgres"
