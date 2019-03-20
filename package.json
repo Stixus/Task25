@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
-    "heroku-posd": "sequelize db:migrate",
+    "heroku-postbuild": "sequelize db:migrate",
     "test": "concurrently \"npm:migrate-server\" \"npm:start-server\"",
     "start-server": "nodemon app.js",
     "migrate-server": "sequelize db:migrate"
@@ -20,8 +20,7 @@
     "nodemon": "^1.18.10",
     "pg": "^7.9.0",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^5.1.0",
-    "sequelize-cli": "^5.4.0"
+    "sequelize": "^5.1.0"
   },
   "devDependencies": {
     "concurrently": "^4.1.0"
