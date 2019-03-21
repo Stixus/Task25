@@ -3,7 +3,7 @@ module.exports = {
   getList(req, res) {
     return Review.findAll({
       rating: req.body.rating,
-      review: req.body.review,
+      review: req.body.reviewText,
       userId: req.body.user_id,
       restaurantId: req.body.restaurant_id
     })
@@ -26,7 +26,7 @@ module.exports = {
     return Review.update(
       {
         rating: req.body.rating,
-        review: req.body.review,
+        review: req.body.reviewText,
         userId: req.body.user_id,
         restaurantId: req.body.restaurant_id
       },
@@ -43,7 +43,7 @@ module.exports = {
   get(req, res) {
     return Review.findOne({
       rating: req.body.rating,
-      review: req.body.review,
+      review: req.body.reviewText,
       userId: req.body.user_id,
       restaurantId: req.body.restaurant_id,
 
@@ -62,7 +62,7 @@ module.exports = {
       },
       {
         rating: req.body.rating,
-        review: req.body.review,
+        review: req.body.reviewText,
         userId: req.body.user_id,
         restaurantId: req.body.restaurant_id
       }
