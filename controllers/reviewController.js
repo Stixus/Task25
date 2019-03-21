@@ -7,6 +7,7 @@ module.exports = {
       userId: req.body.user_id,
       restaurantId: req.body.restaurant_id
     })
+    return Review.findAll({})
       .then(review => res.status(200).send(review))
       .catch(error => res.status(400).send(error));
   },
@@ -46,7 +47,7 @@ module.exports = {
       review: req.body.reviewText,
       userId: req.body.user_id,
       restaurantId: req.body.restaurant_id,
-
+    return Review.findAll({
       order: [["updatedAt", "DESC"]]
     })
       .then(review => res.status(200).send(review))
@@ -54,6 +55,7 @@ module.exports = {
   },
 
   getReviewByRestaurantId(req, res) {
+
     return Review.findAll(
       {
         where: {
@@ -65,8 +67,13 @@ module.exports = {
         review: req.body.reviewText,
         userId: req.body.user_id,
         restaurantId: req.body.restaurant_id
+
+    return Review.findAll({
+      where: {
+        restaurantId: req.param("restaurant_id")
+
       }
-    )
+    })
       .then(review => res.status(200).send(review))
       .catch(error => res.status(400).send(error));
   }
