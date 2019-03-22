@@ -15,6 +15,7 @@ module.exports = {
         type: Sequelize.TEXT
       },
       userId: {
+        allowNull: false,
         type: Sequelize.INTEGER,
         onDelete: "CASCADE",
         references: {
@@ -24,6 +25,7 @@ module.exports = {
         }
       },
       restaurantId: {
+        allowNull: false,
         type: Sequelize.INTEGER,
         onDelete: "CASCADE",
         references: {
