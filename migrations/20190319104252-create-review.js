@@ -9,6 +9,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       rating: {
+        allowNull: false,
         type: Sequelize.DOUBLE
       },
       review: {
