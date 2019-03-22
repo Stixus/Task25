@@ -18,6 +18,11 @@ module.exports = app => {
   app.get("/restaurant/:restaurant_id", restaurantController.get);
   app.post("/restaurant/create", restaurantController.create);
   app.post("/restaurant/update", restaurantController.update);
+  app.get("/restaurant/name/:name", restaurantController.getRestaurantByName);
+  app.get(
+    "/restaurant/category/:category",
+    restaurantController.getRestaurantByCategory
+  );
 
   app.get("/review/list", reviewController.getList);
   app.post("/review/create", reviewController.create);
