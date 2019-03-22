@@ -75,5 +75,15 @@ module.exports = {
     })
       .then(restaurant => res.status(200).send(restaurant))
       .catch(error => res.status(400).send(error));
+  },
+  getRestaurantByUserId(req, res) {
+    lookupValue = req.param("userId");
+    return Restaurant.findAll({
+      where: {
+        userId: lookupValue
+      }
+    })
+      .then(restaurant => res.status(200).send(restaurant))
+      .catch(error => res.status(400).send(error));
   }
 };

@@ -23,6 +23,10 @@ module.exports = app => {
     "/restaurant/category/:category",
     restaurantController.getRestaurantByCategory
   );
+  app.get(
+    "/restaurant/user/:userId",
+    restaurantController.getRestaurantByUserId
+  );
 
   app.get("/review/list", reviewController.getList);
   app.post("/review/create", reviewController.create);
