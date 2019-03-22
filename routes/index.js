@@ -36,4 +36,5 @@ module.exports = app => {
     "/review/restaurant/:restaurant_id",
     reviewController.getReviewByRestaurantId
   );
+  app.get("/review/user/:userId", reviewController.getReviewByUserId);
 };

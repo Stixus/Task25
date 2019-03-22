@@ -52,5 +52,15 @@ module.exports = {
     })
       .then(review => res.status(200).send(review))
       .catch(error => res.status(400).send(error));
+  },
+  getReviewByUserId(req, res) {
+    lookupValue = req.param("userId");
+    return Review.findAll({
+      where: {
+        userId: lookupValue
+      }
+    })
+      .then(restaurant => res.status(200).send(restaurant))
+      .catch(error => res.status(400).send(error));
   }
 };
