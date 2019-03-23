@@ -15,6 +15,15 @@ module.exports = {
       .then(user => res.status(200).send(user))
       .catch(error => res.status(400).send(error));
   },
+  getUserByUsername(req, res) {
+    return User.findOne({
+      where: {
+        username: req.param("username")
+      }
+    })
+      .then(user => res.status(200).send(user))
+      .catch(error => res.status(400).send(error));
+  },
 
   create(req, res) {
     return User.create({

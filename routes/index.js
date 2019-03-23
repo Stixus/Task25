@@ -1,6 +1,8 @@
 const userController = require("../controllers").user;
 const restaurantController = require("../controllers").restaurant;
 const reviewController = require("../controllers").review;
+const authController = require("../controllers").auth;
+const middleware = require("../middleware/midlleware.js");
 
 module.exports = app => {
   app.get("/api", (req, res) =>
@@ -37,4 +39,7 @@ module.exports = app => {
     reviewController.getReviewByRestaurantId
   );
   app.get("/review/user/:userId", reviewController.getReviewByUserId);
+
+  app.post("/login", authController.login);
+  app.get("/checkToken", middleware.checkToken, authController.index);
 };

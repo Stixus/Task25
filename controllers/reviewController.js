@@ -40,7 +40,12 @@ module.exports = {
       .catch(error => res.status(400).send(error));
   },
   getList(req, res) {
-    return Review.findAll({})
+    return Review.findAll({
+      order: [
+        // Will escape title and validate DESC against a list of valid direction parameters
+        ["updatedAt", "DESC"]
+      ]
+    })
       .then(review => res.status(200).send(review))
       .catch(error => res.status(400).send(error));
   },
