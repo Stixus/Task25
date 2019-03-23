@@ -22,7 +22,9 @@ module.exports = {
           res.json({
             success: true,
             message: "Authentication successful!",
-            token: token
+            token: token,
+            username: user.username,
+            role: user.role
           });
         } else {
           res.send(403).json({
