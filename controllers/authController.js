@@ -14,7 +14,10 @@ module.exports = {
       }
     }).then(user => {
       if (username && password) {
-        if (username === user.username && password === user.password) {
+        if (
+          user !== null &&
+          (username === user.username && password === user.password)
+        ) {
           let token = jwt.sign({ username: username }, config.secret, {
             expiresIn: "24h" // expires in 24 hours
           });
